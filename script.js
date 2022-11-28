@@ -6,6 +6,10 @@ function getCatImage() {
         })
         .then((data) => {
             console.log(data[0].url);
-            document.getElementById("catImage").src = data[0].url;
+            const newImg = document.createElement("img");
+            newImg.alt = "cat image"
+            newImg.src = data[0].url;
+
+            document.getElementById("image-container").appendChild(newImg);
         });
 }
